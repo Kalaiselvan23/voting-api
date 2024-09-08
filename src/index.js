@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const { contractABI } = require('./abi');
 dotenv.config();
 
-const provider = new ethers.InfuraProvider('sepolia', process.env.INFURA_API_KEY);
+const provider = new ethers.AlchemyProvider('sepolia', process.env.ALCHEMY_API_KEY);
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 const contractAddress = process.env.CONTRACT_ADDRESS;
 const votingContract = new ethers.Contract(contractAddress, contractABI, wallet);
